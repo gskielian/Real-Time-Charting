@@ -20,6 +20,8 @@ Website
 https://goinstant.com/pricing
 
 
+Check-out the [modded example app](First-Go-Inst/First-Go-Inst.html) based on docs from the Go-Instant website.
+
 
 ToDo:
 -----
