@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="FormSync">
+  <head>
+    <title>GoAngular Form Synchronization</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://cdn.goinstant.net/v1/platform.min.js"></script>
+    <script src="https://cdn.goinstant.net/widgets/go-angular/latest/go-angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-controller="SyncCtrl">
+      <input ng-model="name" type="text"/>
+      <br>
+      <p>Name is: {{ name }}</p>
+    </div>
+    <script>
+      angular.module('FormSync', ['goinstant']).
+        config(function(platformProvider) {
+          platformProvider.set('https://goinstant.net/YOURACCOUNT/YOURAPP');
+        });
+
+      function SyncCtrl($scope, GoAngular) {
+        $scope.name = 'Bob';
+
+        var goAngular = new GoAngular($scope, 'SyncCtrl');
+
+        goAngular.initialize();
+      }
+    </script>
+  </body>
+</html>
